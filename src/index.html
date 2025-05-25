@@ -8,52 +8,111 @@
 </head>
 <body>
     <header>
-        <h1>Organic Sound Machine</h1>
-        <p class="tagline">San Francisco's Contemporary Organ Trio</p>
+        <div class="header-content">
+            <h1>Organic Sound Machine</h1>
+            <p class="tagline">San Francisco's Contemporary Organ Trio</p>
+            <button class="listen-button" onclick="scrollToVideo()">Listen to Us</button>
+        </div>
+        <div class="scroll-indicator" onclick="scrollToHero()">
+            <div class="scroll-arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p class="scroll-text">Scroll to explore</p>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
+    <div class="container">
+        <section class="hero" id="hero-section">
             <div class="hero-content">
-                <h2>Funky Jazz with a Contemporary Twist</h2>
-                <p>Experience the classic organ trio format reimagined with funky jazz tunes and modern pop arrangements. Based in San Francisco, we bring a fresh sound to timeless music.</p>
+                <div class="hero-text">
+                    <h2>This Jazz Trio Makes Billie Jean Sound Like You've Never Heard It Before</h2>
+                    <p>We take the classic Hammond organ trio format and turn it completely upside down. From transforming Michael Jackson hits into swinging jazz masterpieces to making Herbie Hancock grooves that get wedding crowds dancing, Organic Sound Machine bridges the gap between serious musicianship and pure fun. Based in San Francisco's vibrant music scene, we honor legends like Jimmy Smith while creating arrangements so fresh that both jazz purists and casual listeners can't help but move to the beat.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="https://via.placeholder.com/600x450/ffffff/667eea?text=Band+Photo" alt="Organic Sound Machine Band Photo" class="band-photo">
+                </div>
+            </div>
+            
+            <div class="setlist-preview">
+                <h3>Sample from Our Setlist</h3>
+                <p class="setlist-description">Click to hear how we transform familiar songs into something fresh:</p>
+                <div class="song-grid">
+                    <div class="song-column">
+                        <div class="song-item" data-song="Superstition">
+                            <button class="play-button" onclick="playSong('song1', 'Superstition', this)">▶</button>
+                            <span class="song-placeholder">Mystery Track #1</span>
+                            <span class="song-name hidden">Superstition (Stevie Wonder)</span>
+                            <audio id="song1" preload="none">
+                                <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="song-item" data-song="Cantaloupe Island">
+                            <button class="play-button" onclick="playSong('song2', 'Cantaloupe Island', this)">▶</button>
+                            <span class="song-placeholder">Mystery Track #2</span>
+                            <span class="song-name hidden">Cantaloupe Island (Herbie Hancock)</span>
+                            <audio id="song2" preload="none">
+                                <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="song-item" data-song="Billie Jean">
+                            <button class="play-button" onclick="playSong('song3', 'Billie Jean', this)">▶</button>
+                            <span class="song-placeholder">Mystery Track #3</span>
+                            <span class="song-name hidden">Billie Jean (Michael Jackson)</span>
+                            <audio id="song3" preload="none">
+                                <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="song-column">
+                        <div class="song-item" data-song="Chameleon">
+                            <button class="play-button" onclick="playSong('song4', 'Chameleon', this)">▶</button>
+                            <span class="song-placeholder">Mystery Track #4</span>
+                            <span class="song-name hidden">Chameleon (Herbie Hancock)</span>
+                            <audio id="song4" preload="none">
+                                <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="song-item" data-song="Use Me">
+                            <button class="play-button" onclick="playSong('song5', 'Use Me', this)">▶</button>
+                            <span class="song-placeholder">Mystery Track #5</span>
+                            <span class="song-name hidden">Use Me (Bill Withers)</span>
+                            <audio id="song5" preload="none">
+                                <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/mpeg">
+                            </audio>
+                        </div>
+                        <div class="song-item" data-song="Cissy Strut">
+                            <button class="play-button" onclick="playSong('song6', 'Cissy Strut', this)">▶</button>
+                            <span class="song-placeholder">Mystery Track #6</span>
+                            <span class="song-name hidden">Cissy Strut (The Meters)</span>
+                            <audio id="song6" preload="none">
+                                <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="videos">
-            <h2>Watch Us Play</h2>
+        <section class="featured-video" id="video-section">
+            <h2>Featured Performance</h2>
             <div class="video-container">
-                <div class="horizontal-video">
-                    <video controls poster="https://via.placeholder.com/800x450/2c3e50/ffffff?text=Horizontal+Video+Placeholder">
-                        <source src="placeholder-horizontal.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="vertical-videos">
-                    <div class="vertical-video">
-                        <video controls poster="https://via.placeholder.com/450x800/34495e/ffffff?text=Vertical+Video+1">
-                            <source src="placeholder-vertical-1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="vertical-video">
-                        <video controls poster="https://via.placeholder.com/450x800/34495e/ffffff?text=Vertical+Video+2">
-                            <source src="placeholder-vertical-2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
+                <iframe id="youtube-video" 
+                        src="https://www.youtube.com/embed/-TKUNBVlq4w?enablejsapi=1" 
+                        title="Organic Sound Machine Performance" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
             </div>
         </section>
 
         <section class="about">
             <div class="about-content">
-                <img src="https://via.placeholder.com/400x300/95a5a6/ffffff?text=Band+Photo" alt="Organic Sound Machine Band Photo" class="band-photo">
-                <div class="about-text">
-                    <h2>About the Band</h2>
-                    <p>Organic Sound Machine is a contemporary organ trio based in the heart of San Francisco. We take the classic organ trio format and infuse it with modern sensibilities, playing everything from funky jazz standards to reimagined pop tunes.</p>
-                    <p>Our sound blends traditional Hammond organ tones with contemporary rhythms and arrangements, creating a unique musical experience that honors the past while embracing the present.</p>
-                </div>
+                <h2>About the Band</h2>
+                <p>Organic Sound Machine is a contemporary organ trio based in the heart of San Francisco. We take the classic organ trio format and infuse it with modern sensibilities, playing everything from funky jazz standards to reimagined pop tunes.</p>
+                <p>Our sound blends traditional Hammond organ tones with contemporary rhythms and arrangements, creating a unique musical experience that honors the past while embracing the present.</p>
             </div>
         </section>
 
@@ -62,10 +121,117 @@
             <p>Ready to book Organic Sound Machine for your event?</p>
             <a href="mailto:booking@organicsoundmachine.com" class="contact-button">Contact Us</a>
         </section>
-    </main>
+
+        <section class="jam-session">
+            <h2>House Band for Your Jam Session</h2>
+            <div class="jam-content">
+                <h3>Perfect for Jazz Musicians & Music Lovers</h3>
+                <p>Looking for a house band that can keep up with seasoned jazz musicians while remaining accessible to everyone? Organic Sound Machine brings the perfect balance of technical proficiency and approachable musicality.</p>
+                <ul>
+                    <li>Solid groove foundation for improvisation</li>
+                    <li>Familiar standards and contemporary arrangements</li>
+                    <li>Professional accompaniment for sit-in musicians</li>
+                    <li>Engaging for both jazz enthusiasts and casual listeners</li>
+                </ul>
+                <p>We create an environment where jazz musicians can stretch out while keeping the music accessible and enjoyable for all audiences.</p>
+            </div>
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2024 Organic Sound Machine. All rights reserved.</p>
     </footer>
+    <script>
+        let currentlyPlaying = null;
+        let revealTimeouts = [];
+        
+        function scrollToVideo() {
+            const videoSection = document.getElementById('video-section');
+            videoSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center'
+            });
+            
+            // Auto-play video after scroll
+            setTimeout(() => {
+                const iframe = document.getElementById('youtube-video');
+                const src = iframe.src;
+                if (src.includes('autoplay=1')) return;
+                iframe.src = src + '&autoplay=1';
+            }, 1000);
+        }
+        
+        function scrollToHero() {
+            const heroSection = document.getElementById('hero-section');
+            heroSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        
+        function playSong(audioId, songName, button) {
+            const audio = document.getElementById(audioId);
+            const songItem = button.parentElement;
+            const placeholder = songItem.querySelector('.song-placeholder');
+            const songNameElement = songItem.querySelector('.song-name');
+            
+            // Stop any currently playing audio
+            if (currentlyPlaying && currentlyPlaying !== audio) {
+                currentlyPlaying.pause();
+                currentlyPlaying.currentTime = 0;
+                // Reset the previous button
+                const prevButton = document.querySelector('.play-button.playing');
+                if (prevButton) {
+                    prevButton.classList.remove('playing');
+                    prevButton.textContent = '▶';
+                }
+                // Clear any pending timeouts
+                revealTimeouts.forEach(timeout => clearTimeout(timeout));
+                revealTimeouts = [];
+            }
+            
+            if (audio.paused) {
+                // Start playing
+                audio.play().catch(e => {
+                    console.log('Audio play failed:', e);
+                    // Fallback: just show the name immediately for demo
+                    placeholder.classList.add('fade-out');
+                    setTimeout(() => {
+                        placeholder.style.display = 'none';
+                        songNameElement.classList.remove('hidden');
+                        songNameElement.classList.add('revealed');
+                    }, 300);
+                });
+                
+                button.classList.add('playing');
+                button.textContent = '⏸';
+                currentlyPlaying = audio;
+                
+                // Set timeout to reveal song name after 5 seconds
+                const timeout = setTimeout(() => {
+                    placeholder.classList.add('fade-out');
+                    setTimeout(() => {
+                        placeholder.style.display = 'none';
+                        songNameElement.classList.remove('hidden');
+                        songNameElement.classList.add('revealed');
+                    }, 300);
+                }, 5000);
+                
+                revealTimeouts.push(timeout);
+                
+            } else {
+                // Stop playing
+                audio.pause();
+                audio.currentTime = 0;
+                button.classList.remove('playing');
+                button.textContent = '▶';
+                currentlyPlaying = null;
+                
+                // Clear timeouts
+                revealTimeouts.forEach(timeout => clearTimeout(timeout));
+                revealTimeouts = [];
+            }
+        }
+    </script>
 </body>
 </html>
