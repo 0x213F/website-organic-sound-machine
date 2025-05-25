@@ -146,19 +146,19 @@
         let revealTimeouts = [];
         
         function scrollToVideo() {
+            // Start video auto-play immediately
+            const iframe = document.getElementById('youtube-video');
+            const src = iframe.src;
+            if (!src.includes('autoplay=1')) {
+                iframe.src = src + '&autoplay=1';
+            }
+            
+            // Then scroll to video section
             const videoSection = document.getElementById('video-section');
             videoSection.scrollIntoView({ 
                 behavior: 'smooth',
                 block: 'center'
             });
-            
-            // Auto-play video after scroll
-            setTimeout(() => {
-                const iframe = document.getElementById('youtube-video');
-                const src = iframe.src;
-                if (src.includes('autoplay=1')) return;
-                iframe.src = src + '&autoplay=1';
-            }, 1000);
         }
         
         function scrollToHero() {
